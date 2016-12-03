@@ -1,6 +1,5 @@
 namespace FullApp.DataAccess.Migrations
 {
-    using DomainModel;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -11,7 +10,6 @@ namespace FullApp.DataAccess.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FullApp.DataAccess.FullContext";
         }
 
         protected override void Seed(FullApp.DataAccess.FullContext context)
@@ -28,12 +26,6 @@ namespace FullApp.DataAccess.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-
-            context.Products.AddOrUpdate(
-                new Product() { Name = "Product 02" },
-                new Product() { Name = "Product 03" },
-                new Product() { Id = 1, Name = "Product 001" });
         }
     }
 }

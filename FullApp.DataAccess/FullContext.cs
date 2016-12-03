@@ -10,6 +10,11 @@ namespace FullApp.DataAccess
 {
     public class FullContext : DbContext
     {
+        public FullContext() : base("FullAppDb")
+        {
+
+        }
+
         public DbSet<Product> Products { get; set; }
         
     }

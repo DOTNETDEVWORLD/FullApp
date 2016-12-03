@@ -11,7 +11,6 @@ namespace FullApp.WebApi
 {
     public static class WebApiConfig
     {
-
         private static IUnityContainer unityContainer;
 
         public static void Register(HttpConfiguration config)
@@ -21,7 +20,6 @@ namespace FullApp.WebApi
             ConfigureIocContainer();
             // Configuration et services API Web           
             config.DependencyResolver = new UnityResolver(unityContainer);
-
 
             // Itinéraires de l'API Web
             config.MapHttpAttributeRoutes();
@@ -35,17 +33,19 @@ namespace FullApp.WebApi
 
 
         private static void ConfigureIocContainer()
-        {           
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
             var assemblies = Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath ??
-                                                AppDomain.CurrentDomain.BaseDirectory, "FullApp.*.dll");
+                                                AppDomain.CurrentDomain.BaseDirectory, "FullApp.*.dll");            
 
-            var allClasses = AllClasses.FromAssemblies(assemblies.Select(x => Assembly.LoadFrom(x)));
+            var allClasses = AllClasses.FromAssemblies(assemblies.Select(x => Assembly.LoadFile(x)));         
 
             foreach (var c in allClasses.Where(t => t.GetInterfaces().Any(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any())))
             {
                 foreach (var t in c.GetInterfaces().Where(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any()))
                 {
                     unityContainer.RegisterType(t, c);
+                    
                 }
             }                 
         }

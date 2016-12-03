@@ -7,13 +7,13 @@ namespace FullApp.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddPrice : IMigrationMetadata
+    public sealed partial class AddDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPrice));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611301946409_AddPrice"; }
+            get { return "201612031725488_AddDatabase"; }
         }
         
         string IMigrationMetadata.Source

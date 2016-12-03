@@ -50,17 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FullContext.cs" />
-    <Compile Include="Migrations\201611301915160_InitialCreate.cs" />
-    <Compile Include="Migrations\201611301915160_InitialCreate.Designer.cs">
-      <DependentUpon>201611301915160_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301936422_Product Desc.cs" />
-    <Compile Include="Migrations\201611301936422_Product Desc.Designer.cs">
-      <DependentUpon>201611301936422_Product Desc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301946409_AddPrice.cs" />
-    <Compile Include="Migrations\201611301946409_AddPrice.Designer.cs">
-      <DependentUpon>201611301946409_AddPrice.cs</DependentUpon>
+    <Compile Include="Migrations\201612031725488_AddDatabase.cs" />
+    <Compile Include="Migrations\201612031725488_AddDatabase.Designer.cs">
+      <DependentUpon>201612031725488_AddDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonRepository.cs" />
@@ -79,19 +71,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611301915160_InitialCreate.resx">
-      <DependentUpon>201611301915160_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301936422_Product Desc.resx">
-      <DependentUpon>201611301936422_Product Desc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301946409_AddPrice.resx">
-      <DependentUpon>201611301946409_AddPrice.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612031725488_AddDatabase.resx">
+      <DependentUpon>201612031725488_AddDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*.*" "$(SolutionDir)\FullApp.WebApi\bin" /Y</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
