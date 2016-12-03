@@ -9,7 +9,6 @@ namespace FullApp.WebApi.Models
 {
     public class UnityResolver : IDependencyResolver
     {
-
         protected IUnityContainer container;
 
         public UnityResolver(IUnityContainer container)
@@ -48,13 +47,13 @@ namespace FullApp.WebApi.Models
         public IEnumerable<object> GetServices(Type serviceType)
         {
             try
-            {
-                return container.ResolveAll(serviceType);
-            }
-            catch (ResolutionFailedException)
-            {
-                return new List<object>();
-            }
+        {
+            return container.ResolveAll(serviceType);
+        }
+        catch (ResolutionFailedException)
+        {
+            return new List<object>();
+        }
         }
     }
 }

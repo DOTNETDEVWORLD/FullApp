@@ -11,24 +11,22 @@ namespace FullApp.WebApi.Controllers
 {
     public class ProductController : ApiController
     {
-        //private IRepository<Product> productRepository;
+        private IRepository<Product> productRepository;
 
-        //public ProductController(IRepository<Product> productRepository)
-        //{
-        //    this.productRepository = productRepository;
-        //}
-
-
-        private Product product;
-
-        public ProductController(Product productRepository)
+        public ProductController(IRepository<Product> productRepository)
         {
-            this.product = productRepository;
+            this.productRepository = productRepository;
         }
 
         public IEnumerable<Product> Get()
         {
-            return new List<Product>();
+            return productRepository.GetItems();            
+        }
+
+
+        public Product Get(long id)
+        {
+            return productRepository.GetItem(id.ToString());
         }
     }
 }

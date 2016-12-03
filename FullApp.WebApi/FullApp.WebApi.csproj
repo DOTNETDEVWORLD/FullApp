@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -125,6 +126,10 @@
     <ProjectReference Include="..\FullApp.DomainModel\FullApp.DomainModel.csproj">
       <Project>{50182f4f-fdca-4354-9bc5-224337e8046e}</Project>
       <Name>FullApp.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FullApp.Infrastructure\FullApp.Infrastructure.csproj">
+      <Project>{a70a4f1b-e367-46cc-9aaf-39a4388f8042}</Project>
+      <Name>FullApp.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

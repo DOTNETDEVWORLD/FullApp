@@ -10,11 +10,13 @@ namespace FullApp.DataAccess
     public class ProductRepository : IRepository<Product>
     {
         private FullContext db;
-        public ProductRepository()
+        
+        public ProductRepository(FullContext db)
         {
-            db = new FullContext();
+            this.db = db;            
         }
-        public Product GetByCode(string keyWord)
+
+        public Product GetItem(string keyWord)
         {
             return db.Products.Single(x => x.Id.ToString() == keyWord);
         }
