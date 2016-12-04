@@ -50,10 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FullContext.cs" />
-    <Compile Include="Migrations\201612031725488_AddDatabase.cs" />
-    <Compile Include="Migrations\201612031725488_AddDatabase.Designer.cs">
-      <DependentUpon>201612031725488_AddDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonRepository.cs" />
     <Compile Include="ProductRepository.cs" />
@@ -69,11 +65,6 @@
       <Project>{50182f4f-fdca-4354-9bc5-224337e8046e}</Project>
       <Name>FullApp.DomainModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612031725488_AddDatabase.resx">
-      <DependentUpon>201612031725488_AddDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

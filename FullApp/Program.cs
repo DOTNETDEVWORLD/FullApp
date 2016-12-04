@@ -1,7 +1,7 @@
-﻿using FullApp.DataAccess;
-using FullApp.DomainModel;
-using System;
-using System.Collections.Generic;
+﻿
+
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +12,11 @@ namespace FullApp
     {
         static void Main(string[] args)
         {
-            using(var db = new FullContext())
-            {
-                var products = db.Products.ToList();     
-            }
+            //var tt = ConfigurationManager.ConnectionStrings;
+            var cs = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs;
+            conn.Open();
         }
     }
 }
