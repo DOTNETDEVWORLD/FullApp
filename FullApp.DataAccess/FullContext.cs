@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 namespace FullApp.DataAccess
 {
     public class FullContext : DbContext
-    {     
+    {
+
+        public FullContext() : base("name=FullAppDbConnectionString")
+        {
+
+        }
 
         public DbSet<Product> Products { get; set; }
         

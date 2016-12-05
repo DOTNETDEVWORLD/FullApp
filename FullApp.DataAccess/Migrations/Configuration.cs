@@ -1,5 +1,6 @@
 namespace FullApp.DataAccess.Migrations
 {
+    using DomainModel;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -12,8 +13,10 @@ namespace FullApp.DataAccess.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(FullApp.DataAccess.FullContext context)
+        protected override void Seed(FullContext context)
         {
+            context.Products.AddOrUpdate(new Product() { Id = 1, Name = "Product 01" });
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

@@ -44,8 +44,7 @@ namespace FullApp.WebApi
             {
                 foreach (var t in c.GetInterfaces().Where(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any()))
                 {
-                    unityContainer.RegisterType(t, c);
-                    
+                    unityContainer.RegisterType(t, c);                    
                 }
             }                 
         }
