@@ -1,4 +1,5 @@
-﻿using FullApp.DataAccess;
+﻿using FullApp.BackOffice.Services;
+using FullApp.DataAccess;
 using FullApp.DomainModel;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,14 @@ namespace FullApp.BackOffice.ViewModels
 {
     public class ProductsViewModel : ViewModelBase
     {
-        private IEnumerable<Product> products;        
+        private IEnumerable<Product> products;
+
+        private FullAppWebApiClient webApiClient;      
 
         public ProductsViewModel()
         {
-           
+            webApiClient = new FullAppWebApiClient();
+           //Task.Run(GetProducts()).Wait();
         }
 
         public IEnumerable<Product> Products
@@ -22,6 +26,11 @@ namespace FullApp.BackOffice.ViewModels
             get { return products; }
             set { products = value; }
         }
+
+        //private Task GetProducts()
+        //{
+        //    products = await webApiClient.GetProducts("").Result;
+        //}
 
     }
 }
