@@ -11,9 +11,9 @@ namespace FullApp.DataAccess
     {
         private FullContext db;
         
-        public ProductRepository(FullContext db)
+        public ProductRepository()
         {
-            this.db = db;            
+            this.db = new FullContext();          
         }
 
         public Product GetItem(string keyWord)

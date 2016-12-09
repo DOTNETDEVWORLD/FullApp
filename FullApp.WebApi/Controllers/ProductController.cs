@@ -19,8 +19,8 @@ namespace FullApp.WebApi.Controllers
         }
 
         public IEnumerable<Product> Get()
-        {
-            return productRepository.GetItems();            
+        {            
+            return productRepository.GetItems().ToList();            
         }
 
 

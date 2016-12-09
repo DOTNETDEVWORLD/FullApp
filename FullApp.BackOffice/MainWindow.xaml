@@ -4,9 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FullApp.BackOffice"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:vm="clr-namespace:FullApp.BackOffice.ViewModels"
+        xmlns:v="clr-namespace:FullApp.BackOffice.Views"
+        mc:Ignorable="d"        
+        Title="MainWindow" Height="600" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:ProductsViewModel}">
+            <v:ProductsView></v:ProductsView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ProductViewModel}">
+            <v:ProductView></v:ProductView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditProductViewModel}">
+            <v:EditProductView></v:EditProductView>
+        </DataTemplate>    
+    </Window.Resources>
     <Grid>
-        
+        <ContentControl Content="{Binding CurrentView}"></ContentControl>        
     </Grid>
 </Window>
