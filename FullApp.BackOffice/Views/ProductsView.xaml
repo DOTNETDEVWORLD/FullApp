@@ -8,11 +8,13 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <ItemsControl ItemsSource="{Binding Products}">
-            <ItemsPanelTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
                 <StackPanel Orientation="Vertical"></StackPanel>
             </ItemsPanelTemplate>
-            <ItemsControl>
-                <ControlTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>           
+                <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
@@ -24,8 +26,8 @@
                         </StackPanel>
                         <TextBlock Text="{Binding Desc}" TextWrapping="Wrap" Grid.Column="1"></TextBlock>                        
                     </Grid>
-                </ControlTemplate>
-            </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
         </ItemsControl>  
     </Grid>
 </UserControl>
