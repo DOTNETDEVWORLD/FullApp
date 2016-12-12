@@ -13,9 +13,14 @@ namespace FullApp.BackOffice.Services
     {
         private HttpClient client = new HttpClient();
 
+        public FullAppWebApiClient()
+        {
+            Initialize();
+        }
+
         public void Initialize()
         {
-            client.BaseAddress = new Uri("http://localhost:53248/Api/Product");
+            client.BaseAddress = new Uri("http://localhost:53465/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         } 
@@ -24,7 +29,7 @@ namespace FullApp.BackOffice.Services
         public async Task<IEnumerable<Product>> GetProducts(string path)
         {
             IEnumerable<Product> products = null;
-            HttpResponseMessage response = await client.GetAsync("");
+            HttpResponseMessage response = await client.GetAsync("Api/Product");
             if (response.IsSuccessStatusCode)
             {
                 products = await response.Content.ReadAsAsync<IEnumerable<Product>>();
