@@ -17,7 +17,7 @@ namespace FullApp.BackOffice.ViewModels
 
         public ProductListViewModel()
         {
-            webApiClient = new FullAppWebApiClient();
+           webApiClient = new FullAppWebApiClient();
            Task.Run(GetProducts).Wait();
         }
 
@@ -29,7 +29,7 @@ namespace FullApp.BackOffice.ViewModels
 
         private async Task GetProducts()
         {
-            Products = await webApiClient.GetProducts("");
+            Products = await webApiClient.GetProducts();
         }
     }
 }

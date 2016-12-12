@@ -26,7 +26,7 @@ namespace FullApp.BackOffice.Services
         } 
         
         
-        public async Task<IEnumerable<Product>> GetProducts(string path)
+        public async Task<IEnumerable<Product>> GetProducts()
         {
             IEnumerable<Product> products = null;
             HttpResponseMessage response = await client.GetAsync("Api/Product");
