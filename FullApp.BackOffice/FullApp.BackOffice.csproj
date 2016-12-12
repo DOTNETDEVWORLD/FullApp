@@ -63,18 +63,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Services\FullAppWebApiClient.cs" />
-    <Compile Include="ViewModels\EditProductViewModel.cs" />
+    <Compile Include="ViewModels\AddEditProductViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\NavigationService.cs" />
     <Compile Include="ViewModels\NotificationObject.cs" />
-    <Compile Include="ViewModels\ProductsViewModel.cs" />
+    <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Views\EditProductView.xaml.cs">
-      <DependentUpon>EditProductView.xaml</DependentUpon>
+    <Compile Include="Views\AddEditProductView.xaml.cs">
+      <DependentUpon>AddEditProductView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductsView.xaml.cs">
-      <DependentUpon>ProductsView.xaml</DependentUpon>
+    <Compile Include="Views\ProductListView.xaml.cs">
+      <DependentUpon>ProductListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
@@ -91,11 +93,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\EditProductView.xaml">
+    <Page Include="Views\AddEditProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProductsView.xaml">
+    <Page Include="Views\ProductListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

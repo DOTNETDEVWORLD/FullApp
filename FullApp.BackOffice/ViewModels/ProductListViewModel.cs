@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace FullApp.BackOffice.ViewModels
 {
-    public class ProductsViewModel : ViewModelBase
+    public class ProductListViewModel : ViewModelBase
     {
         private IEnumerable<Product> products;
 
         private FullAppWebApiClient webApiClient;      
 
-        public ProductsViewModel()
+        public ProductListViewModel()
         {
             webApiClient = new FullAppWebApiClient();
            //Task.Run(GetProducts()).Wait();

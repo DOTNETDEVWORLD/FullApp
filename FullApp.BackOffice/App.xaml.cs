@@ -20,7 +20,7 @@ namespace FullApp.BackOffice
 
             var mainViewModel = new MainViewModel()
             {
-                CurrentView = new ProductsViewModel()
+                CurrentView = new ProductListViewModel()
             };
 
             MainWindow = new MainWindow();

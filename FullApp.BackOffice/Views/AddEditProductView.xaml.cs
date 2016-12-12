@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FullApp.BackOffice.Views
 {
     /// <summary>
-    /// Interaction logic for ProductsView.xaml
+    /// Interaction logic for EditProductView.xaml
     /// </summary>
-    public partial class ProductsView : UserControl
+    public partial class AddEditProductView : UserControl
     {
-        public ProductsView()
+        public AddEditProductView()
         {
             InitializeComponent();
         }
