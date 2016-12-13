@@ -10,6 +10,26 @@ namespace FullApp.BackOffice.ViewModels
     {
         private ViewModelBase currentView;
 
+        private static MainViewModel instance;
+
+        public static MainViewModel Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new MainViewModel();
+                }
+
+                return instance;
+            }
+        }
+
+        private MainViewModel()
+        {
+
+        }
+
         public ViewModelBase CurrentView
         {
             get

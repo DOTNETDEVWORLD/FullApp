@@ -18,13 +18,11 @@ namespace FullApp.BackOffice
         {
             base.OnStartup(e);
 
-            var mainViewModel = new MainViewModel()
-            {
-                CurrentView = new ProductListViewModel()
-            };
+            MainViewModel.Instance.NavigateTo(new ProductListViewModel());
+
 
             MainWindow = new MainWindow();
-            MainWindow.DataContext = mainViewModel;
+            MainWindow.DataContext = MainViewModel.Instance;
 
             MainWindow.Show();
         }

@@ -20,7 +20,7 @@ namespace FullApp.BackOffice.Services
 
         public void Initialize()
         {
-            client.BaseAddress = new Uri("http://localhost:53465/");
+            client.BaseAddress = new Uri("http://92.89.82.128/FullAppWebApi/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         } 
