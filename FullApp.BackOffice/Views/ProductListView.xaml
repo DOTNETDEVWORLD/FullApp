@@ -7,7 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ItemsControl ItemsSource="{Binding Products}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ItemsControl ItemsSource="{Binding Products}" Grid.Row="0">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                 <StackPanel Orientation="Vertical"></StackPanel>
@@ -28,6 +33,9 @@
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>  
+        </ItemsControl>
+
+        <Button Content="Add new product" Width="120" Height="25" Grid.Row="1"
+                Command="{Binding AddNewProductCommand}"  HorizontalAlignment="Right"></Button>
     </Grid>
 </UserControl>

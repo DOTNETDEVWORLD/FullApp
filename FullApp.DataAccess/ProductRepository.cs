@@ -13,7 +13,7 @@ namespace FullApp.DataAccess
         
         public ProductRepository()
         {
-            this.db = new FullContext();          
+            db = new FullContext();          
         }
 
         public Product GetItem(string keyWord)

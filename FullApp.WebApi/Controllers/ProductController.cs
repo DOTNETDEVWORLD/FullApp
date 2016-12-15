@@ -28,5 +28,11 @@ namespace FullApp.WebApi.Controllers
         {
             return productRepository.GetItem(id.ToString());
         }
+
+
+        public void Post(Product product)
+        {
+
+        }
     }
 }

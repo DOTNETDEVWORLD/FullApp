@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,7 @@ namespace FullApp.BackOffice.Services
             client.BaseAddress = new Uri("http://92.89.82.128/FullAppWebApi/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        } 
-        
+        }        
         
         public async Task<IEnumerable<Product>> GetProducts()
         {
@@ -35,6 +35,11 @@ namespace FullApp.BackOffice.Services
                 products = await response.Content.ReadAsAsync<IEnumerable<Product>>();
             }
             return products;
-        }        
+        }           
+        
+        public async Task AddEditProduct(Product product)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("Api/Product", product);
+        }     
     }
 }
