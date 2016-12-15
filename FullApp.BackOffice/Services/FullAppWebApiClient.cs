@@ -34,7 +34,6 @@ namespace FullApp.BackOffice.Services
             {
                 products = await response.Content.ReadAsAsync<IEnumerable<Product>>();
             }
-
             return products;
         }           
         
