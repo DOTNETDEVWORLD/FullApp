@@ -8,6 +8,5 @@ namespace FullApp.BackOffice.ViewModels
 {
     public class ViewModelBase : NotificationObject
     {
-
     }
 }

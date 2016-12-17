@@ -9,14 +9,14 @@
         mc:Ignorable="d"        
         Title="MainWindow" Height="600" Width="800">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:ProductsViewModel}">
-            <v:ProductsView></v:ProductsView>
+        <DataTemplate DataType="{x:Type vm:ProductListViewModel}">
+            <v:ProductListView></v:ProductListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:ProductViewModel}">
             <v:ProductView></v:ProductView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:EditProductViewModel}">
-            <v:EditProductView></v:EditProductView>
+        <DataTemplate DataType="{x:Type vm:AddEditProductViewModel}">
+            <v:AddEditProductView></v:AddEditProductView>
         </DataTemplate>    
     </Window.Resources>
     <Grid>
