@@ -1,9 +1,14 @@
-﻿
-
+﻿@using FullApp.DomainModel;
+@model IEnumerable<Product>
 
 @{
     ViewBag.Title = "Acceuil";
 }
 
 <h2>Available products : </h2>
+
+@foreach (var product in Model)
+{
+    <div>@product.Name</div>
+}
 

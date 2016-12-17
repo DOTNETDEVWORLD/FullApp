@@ -153,10 +153,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FullApp.DataAccess\FullApp.DataAccess.csproj">
-      <Project>{3daada0c-3dc0-40a9-bb52-e012e904320f}</Project>
-      <Name>FullApp.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FullApp.DomainModel\FullApp.DomainModel.csproj">
       <Project>{50182f4f-fdca-4354-9bc5-224337e8046e}</Project>
       <Name>FullApp.DomainModel</Name>

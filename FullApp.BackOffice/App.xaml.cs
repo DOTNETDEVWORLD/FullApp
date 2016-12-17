@@ -27,7 +27,7 @@ namespace FullApp.BackOffice
             base.OnStartup(e);
 
             ConfigureIocContainer();
-            
+
             var navigation = container.Resolve<NavigationViewModel>();
 
             navigation.NavigateTo(container.Resolve<ProductListViewModel>());
@@ -47,19 +47,19 @@ namespace FullApp.BackOffice
             container = new UnityContainer();
             container.RegisterType<NavigationViewModel>(new ContainerControlledLifetimeManager());
 
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            var assemblies = Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath ??
-                                                AppDomain.CurrentDomain.BaseDirectory, "FullApp.*.dll");
+            //string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            //var assemblies = Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath ??
+            //                                    AppDomain.CurrentDomain.BaseDirectory, "FullApp.*.dll");
 
-            var allClasses = AllClasses.FromAssemblies(assemblies.Select(x => Assembly.LoadFile(x)));
+            //var allClasses = AllClasses.FromAssemblies(assemblies.Select(x => Assembly.LoadFile(x)));
 
-            foreach (var c in allClasses.Where(t => t.GetInterfaces().Any(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any())))
-            {
-                foreach (var t in c.GetInterfaces().Where(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any()))
-                {
-                    container.RegisterType(t, c);
-                }
-            }
+            //foreach (var c in allClasses.Where(t => t.GetInterfaces().Any(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any())))
+            //{
+            //    foreach (var t in c.GetInterfaces().Where(i => i.GetCustomAttributes(typeof(AutoRegisterAttribute), true).Any()))
+            //    {
+            //        container.RegisterType(t, c);
+            //    }
+            //}
         }
 
 

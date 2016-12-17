@@ -1,6 +1,6 @@
 ﻿using FullApp.BackOffice.Services;
 using FullApp.BackOffice.ViewModels.Commands;
-using FullApp.DataAccess;
+
 using FullApp.DomainModel;
 using System;
 using System.Collections.Generic;
