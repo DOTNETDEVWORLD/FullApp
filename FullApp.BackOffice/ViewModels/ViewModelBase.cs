@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FullApp.BackOffice.ViewModels
 {
-    public class ViewModelBase : NotificationObject
+    public class ViewModelBase : ValidationObject
     {
     }
 }

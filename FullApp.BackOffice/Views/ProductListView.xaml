@@ -11,14 +11,15 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <ItemsControl ItemsSource="{Binding Products}" Grid.Row="0">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                <StackPanel Orientation="Vertical"></StackPanel>
-            </ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"></StackPanel>
+                </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>           
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -29,13 +30,16 @@
                             <TextBlock Text="{Binding Name}"></TextBlock>
                             <TextBlock Text="{Binding Price}"></TextBlock>
                         </StackPanel>
-                        <TextBlock Text="{Binding Desc}" TextWrapping="Wrap" Grid.Column="1"></TextBlock>                        
+                        <TextBlock Text="{Binding Desc}" TextWrapping="Wrap" Grid.Column="1"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <Button Content="Add new product" Width="120" Height="25" Grid.Row="1"
+        <Button Content="Add new product"  Grid.Row="1"
                 Command="{Binding AddNewProductCommand}"  HorizontalAlignment="Right"></Button>
+
+        <TextBox Grid.Row="2" Height="25" Text="{Binding Text , ValidatesOnExceptions=True}"/>
+        
     </Grid>
 </UserControl>

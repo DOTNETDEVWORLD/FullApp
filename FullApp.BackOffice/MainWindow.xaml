@@ -7,8 +7,10 @@
         xmlns:vm="clr-namespace:FullApp.BackOffice.ViewModels"
         xmlns:v="clr-namespace:FullApp.BackOffice.Views"
         mc:Ignorable="d"        
-        Title="MainWindow" Height="600" Width="800">
-    <Window.Resources>
+        Title="MainWindow" Height="600" Width="800"> 
+
+    <Window.Resources>      
+
         <DataTemplate DataType="{x:Type vm:ProductListViewModel}">
             <v:ProductListView></v:ProductListView>
         </DataTemplate>
@@ -17,9 +19,14 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:AddEditProductViewModel}">
             <v:AddEditProductView></v:AddEditProductView>
-        </DataTemplate>    
+        </DataTemplate>
     </Window.Resources>
-    <Grid>
-        <ContentControl Content="{Binding CurrentView}"></ContentControl>        
-    </Grid>
+
+    <StackPanel>
+        <Button Content="Bonjour"></Button>
+        <Grid>
+            <ContentControl Content="{Binding CurrentView}"></ContentControl>
+        </Grid>
+    </StackPanel>
+    
 </Window>

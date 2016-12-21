@@ -22,10 +22,8 @@ namespace FullApp.BackOffice
     {
         private IUnityContainer container;
 
-        protected override void OnStartup(StartupEventArgs e)
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
-            base.OnStartup(e);
-
             ConfigureIocContainer();
 
             var navigation = container.Resolve<NavigationViewModel>();
@@ -39,7 +37,6 @@ namespace FullApp.BackOffice
 
             MainWindow.Show();
         }
-
 
         private void ConfigureIocContainer()
         {
@@ -62,7 +59,6 @@ namespace FullApp.BackOffice
             //}
         }
 
-
-
+    
     }
 }

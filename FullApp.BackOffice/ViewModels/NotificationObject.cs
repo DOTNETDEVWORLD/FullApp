@@ -7,9 +7,16 @@ namespace FullApp.BackOffice.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChange([CallerMemberName] string name = null)
+        protected virtual void SetProperty<T>(ref T member, T val, 
+            [CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            member = val;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void NotifyPropertyChange([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

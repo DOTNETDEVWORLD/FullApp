@@ -89,6 +89,7 @@
     <Compile Include="ViewModels\NotificationObject.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ValidationObject.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AddEditProductView.xaml.cs">
       <DependentUpon>AddEditProductView.xaml</DependentUpon>

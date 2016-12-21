@@ -46,5 +46,8 @@ namespace FullApp.BackOffice.ViewModels
                 return navigateToAddEditProductCommand;
             }
         }
+
+
+        public int Text { get; set; }
     }
 }
