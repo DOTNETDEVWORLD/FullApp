@@ -24,17 +24,14 @@ namespace FullApp.BackOffice.ViewModels
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         public IEnumerable GetErrors(string propertyName)
-        {
-            if (errors.Any())
+        {            
+            if (errors.ContainsKey(propertyName))
             {
                 return errors[propertyName];
             }
-            else
-            {
-                return null;
-            }
-        }
 
+            return new List<string>();           
+        }
 
         protected override void SetProperty<T>(ref T member, T val, [CallerMemberName] string propertyName = null)
         {
@@ -42,10 +39,15 @@ namespace FullApp.BackOffice.ViewModels
             ValidateProperty(val, propertyName);        
         }
 
-
         public void ValidateProperty<T>(T val, string propertyName)
         {
             ErrorsChanged(this, new DataErrorsChangedEventArgs(propertyName));
+        }
+
+
+        protected void AddError(string errorMessage, [CallerMemberName] string propertyName =null)
+        {              
+            errors.Add(propertyName,  new List<string> { errorMessage, errorMessage } );
         }
     }
 }

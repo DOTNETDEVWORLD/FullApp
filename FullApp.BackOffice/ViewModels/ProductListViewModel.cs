@@ -4,6 +4,7 @@ using FullApp.BackOffice.ViewModels.Commands;
 using FullApp.DomainModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,14 @@ namespace FullApp.BackOffice.ViewModels
     public class ProductListViewModel : ViewModelBase
     {
         private IEnumerable<Product> products;
-        private FullAppWebApiClient webApiClient;       
+        private FullAppWebApiClient webApiClient;
         private NavigateToAddEditProductCommand navigateToAddEditProductCommand;
 
         public ProductListViewModel(FullAppWebApiClient webApiClient, NavigateToAddEditProductCommand navigateToAddEditProductCommand)
         {
             this.webApiClient = webApiClient;
             this.navigateToAddEditProductCommand = navigateToAddEditProductCommand;
-            Task.Run(GetProducts);            
+            Task.Run(GetProducts);
         }
 
         public IEnumerable<Product> Products
@@ -37,7 +38,7 @@ namespace FullApp.BackOffice.ViewModels
         private async Task GetProducts()
         {
             Products = await webApiClient.GetProducts();
-        }      
+        }
 
         public ICommand AddNewProductCommand
         {
@@ -47,7 +48,25 @@ namespace FullApp.BackOffice.ViewModels
             }
         }
 
+        private string text;
 
-        public int Text { get; set; }
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                text = value;
+
+                if(text.Length <= 5)
+                {
+                    AddError("Erreur de longeur");
+                }                
+
+                SetProperty(ref text, value);                
+            }
+        }
     }
 }
